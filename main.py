@@ -9,13 +9,24 @@ from datetime import datetime
 auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
 auth.set_access_token(key, secret)
 api = tweepy.API(auth)
-current_date = str(datetime.now())
 
 # Main Function (invoking below)
 def main():
-    updatestr = "Hello World! " + str(random()) +" \n\nThis is a random bot-message, posted on: " + current_date + ". If you have any complaints, drop me a DM!"
+
+    footer =  " \n\nThis is a random bot-message, posted on: " + str(datetime.now()) + ". If you have any complaints, drop me a DM!"
+    updatestr = "Hello World! " + str(random()) + footer
     print("Done! Update String: " + updatestr)
     api.update_status(updatestr);
+
+
+# Destroy all beta tweets
+def destroy_all_test_tweets():
+    for status in api.user_timeline():
+        json = status._json
+        id = json['id']
+
+        api.destroy_status(id)
+
 
 if __name__ == "__main__":
     while True:
