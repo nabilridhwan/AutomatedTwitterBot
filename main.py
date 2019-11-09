@@ -16,6 +16,7 @@ bot_interval = None
 
 # with open('./credentials.json') as credentials_cfg:
 #     credentials_json = json.load(credentials_cfg)
+#     print(credentials_json)
 #     for data in credentials_json:
 #         consumer_token = data["consumer_token"]
 #         consumer_secret = data["consumer_secret"]
