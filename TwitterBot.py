@@ -20,7 +20,7 @@ class TwitterBot:
         else:
             self.footer = input_footer
 
-    def push_string(self, input_push_string):
+    def text(self, input_push_string):
         self.update_string = input_push_string
         return self.update_string + self.footer
 
