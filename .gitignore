@@ -15,4 +15,4 @@ credentials.py
 # Tweets id
 *.json
 
-*c9*
+*c9*.py
