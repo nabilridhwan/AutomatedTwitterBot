@@ -24,9 +24,11 @@ with open('./credentials.json') as credentials_cfg:
     access_secret = credentials_json[3]["access_secret"]
     bot_interval = credentials_json[4]["bot_interval"]
 
+
 auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
+
 __TwitterBot__ = TwitterBot(0, api)
 
 # Main Function (invoking below)
