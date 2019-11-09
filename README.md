@@ -10,7 +10,7 @@
 # The TwitterBot class
 > Each function returns a string, this string can be used in the update status
 
-You can initialize an instance by assigning it to a variable `\_\_TwitterBot\_\_ = TwitterBot(0, api)`
+You can initialize an instance by assigning it to a variable `__TwitterBot__ = TwitterBot(0, api)`
 
 - \_\_init\_\_(self, input_footer, input_api_object)
     - Takes in a string for footer (if there is non, please input 0) that will end up behind your tweet (use \n\n to leave a line). Also takes in an api_object (from Tweepy intialisation)
