@@ -6,6 +6,7 @@
 2. Rename the file from `credentials_demo.json` to `credentials.json` so that the program can read the file
 3. Edit away in main.py in the main function! (Seperate docs will be written for this!)
 
+
 # The TwitterBot class
 > Each function returns a string, this string can be used in the update status
 
