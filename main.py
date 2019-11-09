@@ -1,6 +1,5 @@
 # Import packages
 import tweepy
-from credentials import *
 from time import sleep
 import json
 from TwitterBot import TwitterBot
@@ -18,11 +17,11 @@ with open('./credentials.json') as credentials_cfg:
     # TODO: To give a better work around to read from json file
     credentials_json = json.load(credentials_cfg)
 
-    consumer_token = credentials_json[0]["consumer_token"]
-    consumer_secret = credentials_json[1]["consumer_secret"]
-    access_key = credentials_json[2]["access_key"]
-    access_secret = credentials_json[3]["access_secret"]
-    bot_interval = credentials_json[4]["bot_interval"]
+    consumer_token = credentials_json["consumer_token"]
+    consumer_secret = credentials_json["consumer_secret"]
+    access_key = credentials_json["access_key"]
+    access_secret = credentials_json["access_secret"]
+    bot_interval = credentials_json["bot_interval"]
 
 
 auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
