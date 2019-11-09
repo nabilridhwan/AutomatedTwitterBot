@@ -48,11 +48,3 @@ class TwitterBot:
         except:
             print("Error while deleting all the tweets. Please check the bot's twitter")
             return 1
-
-    def update_status(self, update_string):
-        try:
-            self.api_object.update_status(update_string)
-            return 0
-        except Exception:
-            print("Error while updating status")
-            return 1
