@@ -1,6 +1,14 @@
 from random import random
 from datetime import datetime
-from credentials import bot_interval
+import json
+
+bot_interval = None
+
+#  TODO: READ CREDENTIALS CONFIG FROM CREDENTIALS.JSON!
+with open('./credentials.json') as credentials_cfg:
+    # TODO: To give a better work around to read from json file
+    credentials_json = json.load(credentials_cfg)
+    bot_interval = credentials_json["bot_interval"]
 
 class TwitterBot:
     def __init__(self, input_footer, input_api_object):
