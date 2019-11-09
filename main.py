@@ -30,8 +30,7 @@ bot_interval = None
 # print(access_secret)
 # print(bot_interval)
 
-auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
-auth.set_access_token(key, secret)
+auth = tweepy.OAuthHandler(consumer_token, consumer_secret).set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 __TwitterBot__ = TwitterBot(0, api)
 
