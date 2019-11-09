@@ -12,4 +12,4 @@
 - random_yes_no(self)
     - Returns a "Yes" or "No" randomly.
 - destroy_all_beta_tweets(self)
-    - Removes 200 tweets (maxium) at a time - will remove limitation in the futute.
+    - Removes 200 tweets (maximum) at a time - will remove limitation in the futute.
