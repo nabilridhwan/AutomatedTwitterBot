@@ -7,6 +7,10 @@
 3. Edit away in main.py in the main function! (Seperate docs will be written for this!)
 
 # TwitterBot class
+> Each function returns a string, this string can be used in the update status
+
+- __init__(self, input_footer, input_api_object)
+    - Takes in a footer that will end up behind your tweet (use \n\n to leave a line). Also takes in an api_object (from Tweepy intialisation)
 - text(self, input_push_string)
     - Returns a string that you inputted as argument.
 - random_yes_no(self)
