@@ -13,25 +13,19 @@ access_secret = None
 bot_interval = None
 
 #  TODO: READ CREDENTIALS CONFIG FROM CREDENTIALS.JSON!
+with open('./credentials.json') as credentials_cfg:
 
-# with open('./credentials.json') as credentials_cfg:
-#     credentials_json = json.load(credentials_cfg)
-#     print(credentials_json)
-#     for data in credentials_json:
-#         consumer_token = data["consumer_token"]
-#         consumer_secret = data["consumer_secret"]
-#         access_key = data["access_key"]
-#         access_secret = data["access_secret"]
-#         bot_interval = data["bot_interval"]
+    # TODO: To give a better work around to read from json file
+    credentials_json = json.load(credentials_cfg)
 
-#  Printing out the credentials (only for debugging!)
-# print(consumer_token)
-# print(consumer_secret)
-# print(access_key)
-# print(access_secret)
-# print(bot_interval)
+    consumer_token = credentials_json[0]["consumer_token"]
+    consumer_secret = credentials_json[1]["consumer_secret"]
+    access_key = credentials_json[2]["access_key"]
+    access_secret = credentials_json[3]["access_secret"]
+    bot_interval = credentials_json[4]["bot_interval"]
 
-auth = tweepy.OAuthHandler(consumer_token, consumer_secret).set_access_token(access_key, access_secret)
+auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
+auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 __TwitterBot__ = TwitterBot(0, api)
 
