@@ -13,8 +13,15 @@ api = tweepy.API(auth)
 # Main Function (invoking below)
 def main():
 
-    footer =  " \n\nThis is a random bot-message, posted on: " + str(datetime.now()) + ". If you have any complaints, drop me a DM!"
-    updatestr = "Hello World! " + str(random()) + footer
+    footer =  " \n\nThis is a random bot-message, posted on: " + str(datetime.now()) + ". If you have any complaints, drop me a DM! Interval: " + str(bot_interval) + " Sec(s)"
+    # updatestr = "Hello World! " + str(random()) + footer
+
+    if(round(random()) != 1):
+        updatestr = "Yes" + footer
+    else:
+        updatestr = "No" + footer
+
+
     print("Done! Update String: " + updatestr)
     api.update_status(updatestr);
 
@@ -31,4 +38,4 @@ def destroy_all_test_tweets():
 if __name__ == "__main__":
     while True:
         main()
-        sleep(30)
+        sleep(bot_interval)
