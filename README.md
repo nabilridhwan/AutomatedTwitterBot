@@ -6,10 +6,17 @@
 2. Rename the file from `credentials_demo.json` to `credentials.json` so that the program can read the file
 3. Edit away in main.py in the main function! (Seperate docs will be written for this!)
 
-# TwitterBot class
-- push_string
-    - Returns a string that you inputted as argument
-- random_yes_no
-    - Returns a "Yes" or "No" by random
-- destroy_all_beta_tweets
-    - Removes all tweets
+
+# The TwitterBot class
+> Each function returns a string, this string can be used in the update status
+
+You can initialize an instance by assigning it to a variable `\_\_TwitterBot\_\_ = TwitterBot(0, api)``
+
+- \_\_init\_\_(self, input_footer, input_api_object)
+    - Takes in a string for footer (if there is non, please input 0) that will end up behind your tweet (use \n\n to leave a line). Also takes in an api_object (from Tweepy intialisation)
+- text(self, input_push_string)
+    - Returns a string that you inputted as argument.
+- random_yes_no(self)
+    - Returns a "Yes" or "No" randomly.
+- destroy_all_beta_tweets(self)
+    - Removes 200 tweets (maximum) at a time - will remove limitation in the futute.
