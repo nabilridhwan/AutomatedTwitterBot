@@ -1,41 +1,24 @@
 # Import packages
 import tweepy
 from credentials import *
-from random import random
 from time import sleep
-from datetime import datetime
+from TwitterBot import TwitterBot
 
 # Tweepy initialisation
 auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
 auth.set_access_token(key, secret)
 api = tweepy.API(auth)
 
+new_twitter_bot = TwitterBot(0, api)
+
 # Main Function (invoking below)
 def main():
-
-    footer =  " \n\nThis is a random bot-message, posted on: " + str(datetime.now()) + ". If you have any complaints, drop me a DM! Interval: " + str(bot_interval) + " Sec(s)"
-    # updatestr = "Hello World! " + str(random()) + footer
-
-    if(round(random()) != 1):
-        updatestr = "Yes" + footer
-    else:
-        updatestr = "No" + footer
-
-
-    print("Done! Update String: " + updatestr)
-    api.update_status(updatestr);
-
-
-# Destroy all beta tweets
-def destroy_all_test_tweets():
-    for status in api.user_timeline():
-        json = status._json
-        id = json['id']
-
-        api.destroy_status(id)
-
+    new_twitter_bot = TwitterBot(0, api)
 
 if __name__ == "__main__":
-    while True:
-        main()
-        sleep(bot_interval)
+    # TODO: note that it deletes in interval of 200 tweets
+    new_twitter_bot.destroy_all_beta_tweets()
+
+    # while True:
+    #     main()
+    #     sleep(bot_interval)
