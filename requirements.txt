@@ -70,7 +70,7 @@ PySocks==1.7.0
 python-dateutil==2.8.0
 python-magic==0.4.15
 pytz==2019.1
-PyYAML==5.1.2
+PyYAML==5.4
 regex==2019.4.14
 render50==3.1.3
 requests==2.22.0
